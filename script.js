@@ -3,8 +3,14 @@ const EMAILJS_SERVICE_ID  = 'service_r1z6608';
 const EMAILJS_TEMPLATE_ID = 'template_04wiqcn';
 const EMAILJS_PUBLIC_KEY  = 't65e6x37oDGJ18GKv';
 
-// Link platformă (înlocuiește cu URL-ul real)
-const PLATFORM_LINK = 'https://platform-ta.ro';
+// Link-uri tipare Google Drive
+const PLATFORM_LINKS = {
+  T1: 'https://drive.google.com/file/d/1wOo_7mAfaXS_mYvA5KKmgYr1DuXb33OK/view?usp=drive_link',
+  T2: 'https://drive.google.com/file/d/1CeOJJyY0oMzzyujA4-DfGT4UicivjkwQ/view?usp=drive_link',
+  T3: 'https://drive.google.com/file/d/1U7eLjR7nIyPROI5uHWJZBFGg8ggX4Yam/view?usp=drive_link',
+  T4: 'https://drive.google.com/file/d/1UFJszGeXr7rbi5IZQGP80RC1k39MbnL6/view?usp=drive_link',
+  T5: 'https://drive.google.com/file/d/1BET8POtUyRdCxegsajNBZl78ejAAlE_t/view?usp=drive_link',
+};
 
 // ─── Date quiz ─── //
 const sections = [
@@ -358,7 +364,7 @@ function submitEmail(e) {
     tipar_nr:     tiparData.nr,
     tipar_titlu:  tiparData.titlu,
     tipar_subtitlu: tiparData.subtitlu,
-    link_platforma: PLATFORM_LINK,
+    link_platforma: PLATFORM_LINKS[resultTipar],
   }).then(() => {
     showScreen('screen-confirm');
   }).catch(err => {
