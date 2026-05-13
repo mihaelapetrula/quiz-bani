@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descoperă tiparul tău în relația cu banii</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ECRAN 1 — INTRO                        -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="screen-intro" class="screen active">
+    <div class="intro-card">
+      <div class="badge">✦ Primește banii în viața ta</div>
+      <h1 class="intro-title">Descoperă tiparul tău în relația cu banii</h1>
+      <p class="intro-subtitle">
+        15 întrebări care îți arată de ce banii nu rămân, nu cresc sau nu vin — și ce poți face cu asta.
+      </p>
+      <p class="intro-hint">Răspunde sincer, cu primul gând care îți vine. Nu există răspunsuri corecte sau greșite.</p>
+      <div class="intro-author">
+        <span class="author-label">Creat de</span>
+        <span class="author-name">Mihaela Petrulă</span>
+        <span class="author-role">Terapeut holistic · Hipnoterapeut · Mentor în terapii complementare</span>
+      </div>
+      <button class="btn-primary" onclick="startQuiz()">Începe quizul</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ECRAN 2 — QUIZ                         -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="screen-quiz" class="screen">
+    <div class="quiz-wrapper">
+      <!-- Bara de progres -->
+      <div class="progress-container">
+        <div class="progress-message" id="progress-message">Hai să începem! 🌱</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+        <div class="progress-counter" id="progress-counter">1 / 15</div>
+      </div>
+
+      <!-- Secțiune label -->
+      <div class="section-label" id="section-label">Secțiunea 1 din 3 — Comportament</div>
+
+      <!-- Întrebarea -->
+      <div class="question-card" id="question-card">
+        <h2 class="question-text" id="question-text"></h2>
+        <div class="answers-list" id="answers-list"></div>
+      </div>
+
+      <!-- Navigare -->
+      <div class="nav-buttons">
+        <button class="btn-back" id="btn-back" onclick="prevQuestion()">← Înapoi</button>
+        <button class="btn-continue" id="btn-continue" onclick="nextQuestion()" disabled>Continuă →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ECRAN 3 — REZULTAT PARȚIAL             -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="screen-result" class="screen">
+    <div class="result-card">
+      <div class="badge">✦ Rezultatul tău</div>
+      <div class="result-tipar-label" id="result-tipar-label">TIPARUL</div>
+      <h2 class="result-title" id="result-title"></h2>
+      <p class="result-subtitle" id="result-subtitle"></p>
+      <div class="result-description" id="result-description"></div>
+
+      <div class="result-cta-box">
+        <p class="result-cta-text">Vrei analiza completă + acces la programul de lucru specific tiparului tău?</p>
+        <button class="btn-primary" onclick="showEmailScreen()">Vreau analiza completă →</button>
+      </div>
+
+      <div class="whatsapp-box">
+        <p>Sau programează direct o sesiune individuală:</p>
+        <a href="https://wa.me/40742449419" target="_blank" class="btn-whatsapp">WhatsApp 0742-449419</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ECRAN 4 — CAPTARE EMAIL                -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="screen-email" class="screen">
+    <div class="email-card">
+      <div class="badge">✦ Analiza completă</div>
+      <h2 class="email-title">Introdu datele tale pentru a primi analiza completă</h2>
+      <p class="email-subtitle">Vei primi pe email ghidul complet al tiparului tău + accesul la program.</p>
+      <form id="email-form" onsubmit="submitEmail(event)">
+        <div class="form-group">
+          <label for="input-name">Prenume</label>
+          <input type="text" id="input-name" placeholder="Prenumele tău" required />
+        </div>
+        <div class="form-group">
+          <label for="input-email">Email</label>
+          <input type="email" id="input-email" placeholder="adresa@email.ro" required />
+        </div>
+        <button type="submit" class="btn-primary" id="btn-submit">Vreau să îmi văd tiparul complet →</button>
+      </form>
+      <p class="form-disclaimer">Nu spam. Te poți dezabona oricând.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ECRAN 5 — CONFIRMARE                   -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="screen-confirm" class="screen">
+    <div class="confirm-card">
+      <div class="confirm-icon">✉️</div>
+      <h2 class="confirm-title">Emailul a fost trimis!</h2>
+      <p class="confirm-text">Verifică inbox-ul (și folderul Spam, uneori ajunge acolo). Ghidul complet al tiparului tău te așteaptă.</p>
+      <div class="whatsapp-box">
+        <p>Vrei să lucrezi direct cu Mihaela?</p>
+        <a href="https://wa.me/40742449419" target="_blank" class="btn-whatsapp">Programează o sesiune — WhatsApp 0742-449419</a>
+      </div>
+      <button class="btn-secondary" onclick="restartQuiz()">Ia quizul din nou</button>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
