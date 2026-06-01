@@ -171,7 +171,7 @@ const questions = [
       { letter: 'B', text: 'Câștig, dar nu știu niciodată unde se duc banii', tipar: 'T2' },
       { letter: 'C', text: 'Mi-e greu să cer cât merit — parcă nu am dreptul', tipar: 'T3' },
       { letter: 'D', text: 'Muncesc mult și dau mult, dar nu rămâne niciodată suficient pentru mine', tipar: 'T4' },
-      { letter: 'E', text: 'Sunt aproape de ceva bun, dar ceva mă oprește mereu înainte să ajung', tipar: 'T5' },
+      { letter: 'E', text: 'Sunt în flux cu banii — primesc, gestionez și dau cu echilibru', tipar: 'T0' },
     ],
   },
 ];
@@ -336,33 +336,37 @@ function prevQuestion() {
 
 // ─── Calculează rezultat ─── //
 function showResult() {
-  const scores = { T0: 0, T1: 0, T2: 0, T3: 0, T4: 0, T5: 0 };
-  answers.forEach(t => { if (t && scores[t] !== undefined) scores[t]++; });
+  try {
+    const scores = { T0: 0, T1: 0, T2: 0, T3: 0, T4: 0, T5: 0 };
+    answers.forEach(t => { if (t && scores[t] !== undefined) scores[t]++; });
 
-  let maxScore = 0;
-  let winner   = 'T1';
-  for (const [key, val] of Object.entries(scores)) {
-    if (val > maxScore) { maxScore = val; winner = key; }
+    let maxScore = 0;
+    let winner   = 'T1';
+    for (const [key, val] of Object.entries(scores)) {
+      if (val > maxScore) { maxScore = val; winner = key; }
+    }
+    resultTipar = winner;
+
+    const t = tipare[winner];
+
+    document.getElementById('result-tipar-label').textContent = t.nr;
+    document.getElementById('result-title').textContent       = t.titlu;
+    document.getElementById('result-title').style.color       = t.culoare;
+    document.getElementById('result-subtitle').textContent    = t.subtitlu;
+    document.getElementById('result-description').innerHTML   = t.descriere.replace(/\n/g, '<br><br>');
+    document.getElementById('result-description').style.borderLeftColor = t.culoare;
+
+    const ctaBox = document.getElementById('result-cta-box');
+    ctaBox.innerHTML = `
+      <p class="result-cta-text">Vrei analiza completă + acces la ghidul specific tiparului tău?</p>
+      <button class="btn-primary" onclick="showEmailScreen()">Vreau analiza completă →</button>
+    `;
+
+    showScreen('screen-result');
+  } catch(err) {
+    alert('Eroare la afișarea rezultatului: ' + err.message);
+    console.error(err);
   }
-  resultTipar = winner;
-
-  const t = tipare[winner];
-
-  // Actualizează culoarea accent pentru tipar
-  document.getElementById('result-tipar-label').textContent = t.nr;
-  document.getElementById('result-title').textContent       = t.titlu;
-  document.getElementById('result-title').style.color       = t.culoare;
-  document.getElementById('result-subtitle').textContent    = t.subtitlu;
-  document.getElementById('result-description').innerHTML   = t.descriere.replace(/\n/g, '<br><br>');
-  document.getElementById('result-description').style.borderLeftColor = t.culoare;
-
-  const ctaBox = document.getElementById('result-cta-box');
-  ctaBox.innerHTML = `
-    <p class="result-cta-text">Vrei analiza completă + acces la ghidul specific tiparului tău?</p>
-    <button class="btn-primary" onclick="showEmailScreen()">Vreau analiza completă →</button>
-  `;
-
-  showScreen('screen-result');
 }
 
 // ─── Rezultat → Email ─── //
