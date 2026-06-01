@@ -616,9 +616,10 @@ body {
   border: none;
   color: var(--text-muted);
   font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px 8px;
   text-decoration: underline;
   text-align: center;
   transition: color 0.2s;
