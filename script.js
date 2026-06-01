@@ -377,11 +377,12 @@ function showEmailScreen() {
 // ─── Trimite email ─── //
 function submitEmail(e) {
   e.preventDefault();
-  const name  = document.getElementById('input-name').value.trim();
-  const email = document.getElementById('input-email').value.trim();
-  const btn   = document.getElementById('btn-submit');
+  const name    = document.getElementById('input-name').value.trim();
+  const email   = document.getElementById('input-email').value.trim();
+  const consent = document.querySelector('input[name="consent"]:checked');
+  const btn     = document.getElementById('btn-submit');
 
-  if (!name || !email) return;
+  if (!name || !email || !consent) return;
 
   btn.disabled    = true;
   btn.textContent = 'Se trimite...';
@@ -395,6 +396,7 @@ function submitEmail(e) {
     tipar_titlu:     tiparData.titlu,
     tipar_subtitlu:  tiparData.subtitlu,
     link_platforma:  PLATFORM_LINKS[resultTipar],
+    newsletter:      consent.value === 'da' ? 'DA - accepta materiale viitoare' : 'NU - doar materialul din quiz',
   }).then(() => {
     showScreen('screen-confirm');
   }).catch(err => {
