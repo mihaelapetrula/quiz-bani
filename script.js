@@ -387,7 +387,7 @@ function submitEmail(e) {
   emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
     to_name:         name,
     to_email:        email,
-    tipar_dominant:  resultTipar,
+    tipar_nr:        tiparData.nr,
     tipar_titlu:     tiparData.titlu,
     tipar_subtitlu:  tiparData.subtitlu,
     link_platforma:  PLATFORM_LINKS[resultTipar],
