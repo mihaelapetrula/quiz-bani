@@ -180,7 +180,7 @@ const questions = [
 const tipare = {
   T0: {
     nr: 'TIPARUL 0',
-    titlu: 'Cel/Cea care trăiește în flux cu banii',
+    titlu: 'Cel sau Cea care trăiește în flux cu banii',
     subtitlu: 'Ai construit o relație funcțională cu banii — și există un nivel următor care te așteaptă.',
     descriere: `Relația ta cu banii este una dintre cele mai echilibrate. Nu înseamnă că nu ai provocări — înseamnă că ai dezvoltat capacitatea de a fi în flux: primești fără vinovăție, dai fără epuizare, acționezi fără să te sabotezi.
 
@@ -189,7 +189,7 @@ Există însă un plafon subtil care te poate ține pe loc. Chiar și în flux e
   },
   T1: {
     nr: 'TIPARUL 1',
-    titlu: 'Cel/Cea care se teme că pierde tot',
+    titlu: 'Cel sau Cea care se teme că pierde tot',
     subtitlu: 'Câștigă, dar trăiește în umbra fricii că tot ce a construit poate dispărea.',
     descriere: `Acest tipar este guvernat de o frică profundă și deseori inconștientă: chiar și atunci când lucrurile merg bine, ceva din interior așteaptă dezastrul. Nu ai neapărat puțini bani — ba uneori câștig bine — însă nu te poți bucura cu adevărat de abundență. Fiecare lună bună vine cu o tensiune subterană: <em>când se termină?</em>
 
@@ -198,7 +198,7 @@ Subconștientul a învățat că abundența este fragilă, temporară, că nu se
   },
   T2: {
     nr: 'TIPARUL 2',
-    titlu: 'Cel/Cea fără busolă financiară',
+    titlu: 'Cel sau Cea fără busolă financiară',
     subtitlu: 'Câștigă, dar banii dispar fără să știe unde.',
     descriere: `Nu ai neapărat venituri mici. Problema nu este cât câștig, ci că nu există un recipient interior care să țină banii. Vin și se duc. Mereu apar cheltuieli. Mereu ceva consumă surplusul. Nu există o relație conștientă cu banii — unde sunt, cât sunt, ce planuri au.
 
@@ -207,7 +207,7 @@ Această dezordine nu este lene sau iresponsabilitate. Ea reflectă o dezordine 
   },
   T3: {
     nr: 'TIPARUL 3',
-    titlu: 'Cel/Cea care nu se simte îndreptățit/ă',
+    titlu: 'Cel sau Cea care nu se simte îndreptățit',
     subtitlu: 'Are valoare, dar îi este rușine să ceară cât valorează.',
     descriere: `Aceasta este una dintre cele mai frecvente și mai subtile blocaje. Nu lipsa competenței este problema, ci convingerea profundă că a cere mult este echivalent cu a fi lacom/ă, egoist/ă sau arogant/ă.
 
@@ -216,7 +216,7 @@ Ești adesea extrem de valoros/oasă profesional, însă prețurile tale nu refl
   },
   T4: {
     nr: 'TIPARUL 4',
-    titlu: 'Cel/Cea care dă prea mult',
+    titlu: 'Cel sau Cea care dă prea mult',
     subtitlu: 'Se recunoaște prin over-delivery și rămâne cu prea puțin.',
     descriere: `Adaugi mereu ceva în plus: o sesiune extra, un material neplătit, o reducere necerută, timp personal dăruit fără compensație. La suprafață pare generozitate — la rădăcină este o nevoie profundă de validare: <em>dacă dau mai mult decât s-a cerut, nu pot fi respins/ă.</em>
 
@@ -225,7 +225,7 @@ Valoarea ta nu este intrinsecă — trebuie dovedită continuu prin performanț�
   },
   T5: {
     nr: 'TIPARUL 5',
-    titlu: 'Cel/Cea care se sabotează înainte de linia de sosire',
+    titlu: 'Cel sau Cea care se sabotează înainte de linia de sosire',
     subtitlu: 'Ajunge aproape de succes, apoi se oprește.',
     descriere: `Aceasta nu este frica de eșec. Este frica de succes. Începi proiecte cu energie și entuziasm, ajungi aproape de finalizare, aproape de lansare, aproape de marele pas — și atunci ceva se întâmplă. Te îmbolnăvești, creezi un conflict, apare o urgență, găsești o problemă tehnică.
 
