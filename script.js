@@ -398,7 +398,7 @@ function submitEmail(e) {
     link_platforma:  PLATFORM_LINKS[resultTipar],
     newsletter:      consent.value === 'da' ? 'DA - accepta materiale viitoare' : 'NU - doar materialul din quiz',
   }).then(() => {
-    showScreen('screen-confirm');
+    showScreen('screen-upsell');
   }).catch(err => {
     btn.disabled    = false;
     btn.textContent = 'Vreau să îmi văd tiparul complet →';
