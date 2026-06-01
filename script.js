@@ -3,13 +3,14 @@ const EMAILJS_SERVICE_ID  = 'service_r1z6608';
 const EMAILJS_TEMPLATE_ID = 'template_04wiqcn';
 const EMAILJS_PUBLIC_KEY  = 't65e6x37oDGJ18GKv';
 
-// Link-uri tipare Google Drive
+// Link-uri PDF tipare Google Drive
 const PLATFORM_LINKS = {
-  T1: 'https://drive.google.com/file/d/1wOo_7mAfaXS_mYvA5KKmgYr1DuXb33OK/view?usp=drive_link',
-  T2: 'https://drive.google.com/file/d/1CeOJJyY0oMzzyujA4-DfGT4UicivjkwQ/view?usp=drive_link',
-  T3: 'https://drive.google.com/file/d/1U7eLjR7nIyPROI5uHWJZBFGg8ggX4Yam/view?usp=drive_link',
-  T4: 'https://drive.google.com/file/d/1UFJszGeXr7rbi5IZQGP80RC1k39MbnL6/view?usp=drive_link',
-  T5: 'https://drive.google.com/file/d/1BET8POtUyRdCxegsajNBZl78ejAAlE_t/view?usp=drive_link',
+  T0: 'https://drive.google.com/file/d/1J3PoSqMuxzvJC0JgfIE9soabOoF-wko3/view?usp=drive_link',
+  T1: 'https://drive.google.com/file/d/1_LGuUfDnO9FLQOGYHE-y1BffCKnxV5cV/view?usp=drive_link',
+  T2: 'https://drive.google.com/file/d/16hrRaGpPz4Tk8Ocw8uH6RRUgbzkEHMkI/view?usp=drive_link',
+  T3: 'https://drive.google.com/file/d/12ximsQRJUeOsxhmJRhCZMm99nl4DDiII/view?usp=drive_link',
+  T4: 'https://drive.google.com/file/d/1xR7xwfeRLeyOEt2SrFfP7DDk4wLU2aNR/view?usp=drive_link',
+  T5: 'https://drive.google.com/file/d/1YQdMTp_c5-uHxVAc4-5zG0XZN_6lvAJB/view?usp=drive_link',
 };
 
 // ─── Date quiz ─── //
@@ -22,27 +23,27 @@ const sections = [
 const questions = [
   // ── Secțiunea 1 ──
   {
-    text: 'Când trebuie să ceri ceva — un preț, un salariu mai mare, un ajutor financiar — ce fac?',
+    text: 'Când trebuie să ceri ceva — un preț, o mărire de salariu, un ajutor financiar — ce faci?',
     answers: [
       { letter: 'A', text: 'Cer, dar în sinea mea mă întreb cât va mai dura situația bună', tipar: 'T1' },
       { letter: 'B', text: 'Cer mai puțin decât am nevoie — nu știu exact cât e potrivit', tipar: 'T2' },
-      { letter: 'C', text: 'Cer mai puțin decât am nevoie, ca să fiu sigură că nu sunt refuzată', tipar: 'T3' },
+      { letter: 'C', text: 'Cer mai puțin decât am nevoie, ca să fiu sigur/ă că nu sunt refuzat/ă', tipar: 'T3' },
       { letter: 'D', text: 'Cer, dar adaug ceva în plus din partea mea ca să compensez', tipar: 'T4' },
-      { letter: 'E', text: 'Vreau să cer, dar amân — nu mă simt pregătită sau nu e momentul potrivit', tipar: 'T5' },
+      { letter: 'E', text: 'Cer clar ceea ce am nevoie, fără să justific sau să adaug extra', tipar: 'T0' },
     ],
   },
   {
-    text: 'Când am o perioadă financiară mai bună ca de obicei, primul meu gând este:',
+    text: 'Când ai o perioadă financiară mai bună ca de obicei, primul tău gând este:',
     answers: [
       { letter: 'A', text: 'Nu știu cât va dura — mai bine nu mă bucur prea tare', tipar: 'T1' },
       { letter: 'B', text: 'Nu știu exact unde s-au dus banii luna trecută, dar cumva s-au dus', tipar: 'T2' },
       { letter: 'C', text: 'Parcă nu merit atât — alții au mai multă nevoie decât mine', tipar: 'T3' },
       { letter: 'D', text: 'Am primit mult — trebuie să dau și eu mai mult în schimb', tipar: 'T4' },
-      { letter: 'E', text: 'Îmi merge bine acum — sper să nu stric eu ceva înainte să se consolideze', tipar: 'T5' },
+      { letter: 'E', text: 'Mă bucur și folosesc această perioadă ca să construiesc ceva stabil', tipar: 'T0' },
     ],
   },
   {
-    text: 'Când cineva îmi propune o oportunitate nouă — un proiect, o colaborare, o schimbare — ce fac?',
+    text: 'Când cineva îți propune o oportunitate nouă — un proiect, o colaborare, o schimbare — ce faci?',
     answers: [
       { letter: 'A', text: 'Ezit mult — mi-e teamă că nu voi putea susține dacă merge bine', tipar: 'T1' },
       { letter: 'B', text: 'Vreau să accept, dar nu știu de unde să încep cu organizarea', tipar: 'T2' },
@@ -52,21 +53,21 @@ const questions = [
     ],
   },
   {
-    text: 'Cum arată relația mea cu banii în mod concret, zi de zi?',
+    text: 'Cum arată relația ta cu banii în mod concret, zi de zi?',
     answers: [
       { letter: 'A', text: 'Îi verific des și mă îngrijorez chiar și când situația e stabilă', tipar: 'T1' },
       { letter: 'B', text: 'Știu că vin, dar nu știu niciodată cât rămân sau unde se duc', tipar: 'T2' },
       { letter: 'C', text: 'Evit să cer prețul corect — mi se pare că e prea mult', tipar: 'T3' },
       { letter: 'D', text: 'Câștig, dar simt că dau mereu mai mult decât primesc', tipar: 'T4' },
-      { letter: 'E', text: 'Evit să finalizez lucruri care m-ar putea aduce la un nivel nou', tipar: 'T5' },
+      { letter: 'E', text: 'Am o imagine clară și mă raportez la bani cu calm și intenție', tipar: 'T0' },
     ],
   },
   {
-    text: 'Există ceva important pe care îl amân de mult timp. Care este motivul real?',
+    text: 'Există ceva important pe care îl amâni de mult timp. Care este motivul real?',
     answers: [
       { letter: 'A', text: 'Mi-e teamă că dacă reușesc, nu voi putea menține așteptările și voi pierde totul', tipar: 'T1' },
-      { letter: 'B', text: 'Nu știu de unde să încep și mă simt copleșită de dezordine', tipar: 'T2' },
-      { letter: 'C', text: 'Nu mă simt suficient de bună — parcă nu e momentul meu', tipar: 'T3' },
+      { letter: 'B', text: 'Nu știu de unde să încep și mă simt copleșit/ă de dezordine', tipar: 'T2' },
+      { letter: 'C', text: 'Nu mă simt suficient de bun/ă — parcă nu e momentul meu', tipar: 'T3' },
       { letter: 'D', text: 'Mă îngrijorez că dacă lansez, oamenii vor cere mai mult decât pot oferi', tipar: 'T4' },
       { letter: 'E', text: 'Mă opresc mereu înainte de final — mereu apare ceva care mă blochează', tipar: 'T5' },
     ],
@@ -79,7 +80,7 @@ const questions = [
       { letter: 'B', text: 'Mă bucur, dar parcă nu înțeleg de unde vine aprecierea', tipar: 'T2' },
       { letter: 'C', text: 'Mă bucur, dar minimalizez imediat — nu a fost mare lucru', tipar: 'T3' },
       { letter: 'D', text: 'Mă bucur, dar simt că trebuie să fac și mai mult data viitoare', tipar: 'T4' },
-      { letter: 'E', text: 'Mă bucur, dar o parte din mine se retrage — parcă e periculos să fiu prea văzută', tipar: 'T5' },
+      { letter: 'E', text: 'Primesc aprecierea cu recunoștință și o las să conteze cu adevărat', tipar: 'T0' },
     ],
   },
   {
@@ -87,7 +88,7 @@ const questions = [
     answers: [
       { letter: 'A', text: 'Anxietate — dacă primesc mai mult, va urma ceva rău sau voi pierde ce am', tipar: 'T1' },
       { letter: 'B', text: 'Confuzie — nu știu cât să cer și nu am o referință clară', tipar: 'T2' },
-      { letter: 'C', text: 'Rușine — mi se pare că cer prea mult sau că sunt lacomă', tipar: 'T3' },
+      { letter: 'C', text: 'Rușine — mi se pare că cer prea mult sau că sunt lacom/ă', tipar: 'T3' },
       { letter: 'D', text: 'Vinovăție — ca și cum nu merit decât dacă ofer ceva în schimb', tipar: 'T4' },
       { letter: 'E', text: 'Blocaj — vreau să cer, dar ceva mă oprește chiar înainte să o fac', tipar: 'T5' },
     ],
@@ -99,7 +100,7 @@ const questions = [
       { letter: 'B', text: 'Confuzie — parcă nu înțeleg cum funcționează, oricât aș încerca', tipar: 'T2' },
       { letter: 'C', text: 'Rușine — simt că fie am prea puțin, fie cer prea mult', tipar: 'T3' },
       { letter: 'D', text: 'Oboseală — dau mereu mai mult și totuși nu pare suficient', tipar: 'T4' },
-      { letter: 'E', text: 'Teamă — de fiecare dată când sunt aproape de ceva bun, apar gânduri că nu va dura', tipar: 'T5' },
+      { letter: 'E', text: 'Claritate și încredere — știu unde sunt și mă simt în control', tipar: 'T0' },
     ],
   },
   {
@@ -115,18 +116,18 @@ const questions = [
   {
     text: 'Cum te simți când vezi că altcineva câștigă bine sau are succes vizibil?',
     answers: [
-      { letter: 'A', text: 'O admir, dar mă gândesc că și ea ar putea pierde oricând', tipar: 'T1' },
-      { letter: 'B', text: 'O admir, dar nu înțeleg concret cum a ajuns acolo', tipar: 'T2' },
-      { letter: 'C', text: 'O admir, dar simt o strângere — de ce nu și eu?', tipar: 'T3' },
-      { letter: 'D', text: 'O admir, dar îmi vin gânduri că trebuie să muncesc și mai mult', tipar: 'T4' },
-      { letter: 'E', text: 'O admir, dar simt o teamă că dacă aș reuși și eu, relațiile mele s-ar schimba', tipar: 'T5' },
+      { letter: 'A', text: 'Îl/o admir, dar mă gândesc că și el/ea ar putea pierde oricând', tipar: 'T1' },
+      { letter: 'B', text: 'Îl/o admir, dar nu înțeleg concret cum a ajuns acolo', tipar: 'T2' },
+      { letter: 'C', text: 'Îl/o admir, dar simt o strângere — de ce nu și eu?', tipar: 'T3' },
+      { letter: 'D', text: 'Îl/o admir, dar îmi vin gânduri că trebuie să muncesc și mai mult', tipar: 'T4' },
+      { letter: 'E', text: 'Mă bucur sincer pentru el/ea — succesul altora nu îl diminuează pe al meu', tipar: 'T0' },
     ],
   },
   // ── Secțiunea 3 ──
   {
     text: 'Cum se vorbea despre bani în familia în care ai crescut?',
     answers: [
-      { letter: 'A', text: 'Banii vin greu și se pierd ușor — trebuie să fii mereu atentă', tipar: 'T1' },
+      { letter: 'A', text: 'Banii vin greu și se pierd ușor — trebuie să fii mereu atent/ă', tipar: 'T1' },
       { letter: 'B', text: 'Era un subiect tensionat, secret sau evitat', tipar: 'T2' },
       { letter: 'C', text: 'Nu e frumos să ceri sau să te pui în față pentru bani', tipar: 'T3' },
       { letter: 'D', text: 'Important e să dai mai mult decât primești — asta e omenie', tipar: 'T4' },
@@ -134,23 +135,23 @@ const questions = [
     ],
   },
   {
-    text: 'Ce mesaj ai primit, direct sau indirect, despre femei și bani?',
+    text: 'Ce mesaj ai primit, direct sau indirect, despre oameni și bani?',
     answers: [
-      { letter: 'A', text: 'Femeia care câștigă mult nu e fericită — sigur pierde altceva important', tipar: 'T1' },
-      { letter: 'B', text: 'Femeia nu se prea ocupă de bani — e mai degrabă treaba altcuiva', tipar: 'T2' },
-      { letter: 'C', text: 'Femeia care câștigă mult e egoistă sau materialistă', tipar: 'T3' },
-      { letter: 'D', text: 'Femeia bună se sacrifică și dă mai mult decât primește', tipar: 'T4' },
-      { letter: 'E', text: 'Nu te pune prea mult în față — atrage invidie și probleme', tipar: 'T5' },
+      { letter: 'A', text: 'Cine câștigă mult nu e fericit — sigur pierde altceva important', tipar: 'T1' },
+      { letter: 'B', text: 'Banii sunt complicați — mai bine îi lasă alții să se ocupe', tipar: 'T2' },
+      { letter: 'C', text: 'Cine câștigă mult e egoist sau materialist', tipar: 'T3' },
+      { letter: 'D', text: 'Omul bun se sacrifică și dă mai mult decât primește', tipar: 'T4' },
+      { letter: 'E', text: 'Banii sunt o unealtă — pot fi câștigați, gestionați și folosiți cu înțelepciune', tipar: 'T0' },
     ],
   },
   {
     text: 'Când cineva din cercul tău apropiat are mai mult decât tine — financiar sau profesional — ce simți?',
     answers: [
-      { letter: 'A', text: 'Mă bucur, dar imediat mă gândesc că și ea poate pierde oricând', tipar: 'T1' },
-      { letter: 'B', text: 'Mă bucur pentru ea, dar nu înțeleg cum a reușit — eu nu știu să fac asta', tipar: 'T2' },
-      { letter: 'C', text: 'Mă bucur pentru ea, dar mă întreb discret de ce nu și eu', tipar: 'T3' },
+      { letter: 'A', text: 'Mă bucur, dar imediat mă gândesc că și el/ea poate pierde oricând', tipar: 'T1' },
+      { letter: 'B', text: 'Mă bucur pentru el/ea, dar nu înțeleg cum a reușit', tipar: 'T2' },
+      { letter: 'C', text: 'Mă bucur pentru el/ea, dar mă întreb discret de ce nu și eu', tipar: 'T3' },
       { letter: 'D', text: 'Mă motivează, dar simt că trebuie să muncesc și mai mult', tipar: 'T4' },
-      { letter: 'E', text: 'O admir, dar simt o teamă că dacă aș reuși și eu, relațiile mele s-ar schimba', tipar: 'T5' },
+      { letter: 'E', text: 'Îl/o admir, dar simt o teamă că dacă aș reuși și eu, relațiile mele s-ar schimba', tipar: 'T5' },
     ],
   },
   {
@@ -158,7 +159,7 @@ const questions = [
     answers: [
       { letter: 'A', text: 'Mi-a fost teamă că dacă reușeam, puteam pierde și mai mult după', tipar: 'T1' },
       { letter: 'B', text: 'Nu am știut cum să organizez resursele și m-am blocat', tipar: 'T2' },
-      { letter: 'C', text: 'Nu m-am simțit suficient de bună sau pregătită', tipar: 'T3' },
+      { letter: 'C', text: 'Nu m-am simțit suficient de bun/ă sau pregătit/ă', tipar: 'T3' },
       { letter: 'D', text: 'Am dat prea mult altora și nu mi-a mai rămas energie pentru mine', tipar: 'T4' },
       { letter: 'E', text: 'A intervenit ceva — o urgență, o boală, un conflict neprevăzut', tipar: 'T5' },
     ],
@@ -177,51 +178,65 @@ const questions = [
 
 // ─── Date tipare ─── //
 const tipare = {
+  T0: {
+    nr: 'TIPARUL 0',
+    titlu: 'Cel/Cea care trăiește în flux cu banii',
+    subtitlu: 'Ai construit o relație funcțională cu banii — și există un nivel următor care te așteaptă.',
+    descriere: `Relația ta cu banii este una dintre cele mai echilibrate. Nu înseamnă că nu ai provocări — înseamnă că ai dezvoltat capacitatea de a fi în flux: primești fără vinovăție, dai fără epuizare, acționezi fără să te sabotezi.
+
+Există însă un plafon subtil care te poate ține pe loc. Chiar și în flux există straturi mai adânci de eliberat și niveluri mai înalte de accesat. Ghidul tău complet ți-a fost trimis pe email.`,
+    culoare: '#2D7D46',
+  },
   T1: {
     nr: 'TIPARUL 1',
-    titlu: 'Femeia care se teme că pierde tot',
-    subtitlu: 'Câștigă, dar trăiește în umbra fricii că tot ce a construit poate dispărea într-o clipă.',
+    titlu: 'Cel/Cea care se teme că pierde tot',
+    subtitlu: 'Câștigă, dar trăiește în umbra fricii că tot ce a construit poate dispărea.',
     descriere: `Acest tipar este guvernat de o frică profundă și deseori inconștientă: chiar și atunci când lucrurile merg bine, ceva din interior așteaptă dezastrul. Nu ai neapărat puțini bani — ba uneori câștig bine — însă nu te poți bucura cu adevărat de abundență. Fiecare lună bună vine cu o tensiune subterană: <em>când se termină?</em>
 
 Subconștientul a învățat că abundența este fragilă, temporară, că nu se poate conta pe ea. Iar această convingere devine o profeție care se împlinește singură: cu cât te temi mai mult că vei pierde, cu atât creezi exact condițiile care fac pierderea posibilă.`,
+    culoare: '#9B2C52',
   },
   T2: {
     nr: 'TIPARUL 2',
-    titlu: 'Femeia fără busolă financiară',
+    titlu: 'Cel/Cea fără busolă financiară',
     subtitlu: 'Câștigă, dar banii dispar fără să știe unde.',
     descriere: `Nu ai neapărat venituri mici. Problema nu este cât câștig, ci că nu există un recipient interior care să țină banii. Vin și se duc. Mereu apar cheltuieli. Mereu ceva consumă surplusul. Nu există o relație conștientă cu banii — unde sunt, cât sunt, ce planuri au.
 
 Această dezordine nu este lene sau iresponsabilitate. Ea reflectă o dezordine emoțională mai veche, un mesaj interiorizat că banii sunt ceva haotic, imprevizibil, care nu poate fi controlat. Și câtă vreme nu există un container interior stabil, nici unul exterior nu va rezista.`,
+    culoare: '#7A5200',
   },
   T3: {
     nr: 'TIPARUL 3',
-    titlu: 'Femeia care nu se simte îndreptățită',
+    titlu: 'Cel/Cea care nu se simte îndreptățit/ă',
     subtitlu: 'Are valoare, dar îi este rușine să ceară cât valorează.',
-    descriere: `Aceasta este una dintre cele mai frecvente și mai subtile blocaje ale femeilor în business. Nu lipsa competenței este problema, ci convingerea profundă că a cere mult este echivalent cu a fi lacomă, egoistă sau arogantă.
+    descriere: `Aceasta este una dintre cele mai frecvente și mai subtile blocaje. Nu lipsa competenței este problema, ci convingerea profundă că a cere mult este echivalent cu a fi lacom/ă, egoist/ă sau arogant/ă.
 
-Ești adesea extrem de valoroasă profesional, însă prețurile tale nu reflectă această valoare. Te compari constant cu altele și ieși pierdută din comparație — nu pentru că ești mai puțin bună, ci pentru că filtrul interior te diminuează sistematic. Și cu cât te micșorezi mai mult, cu atât lumea te tratează ca și cum ai valora mai puțin.`,
+Ești adesea extrem de valoros/oasă profesional, însă prețurile tale nu reflectă această valoare. Te compari constant cu alții și ieși pierdut/ă din comparație — nu pentru că ești mai puțin bun/ă, ci pentru că filtrul interior te diminuează sistematic. Și cu cât te micșorezi mai mult, cu atât lumea te tratează ca și cum ai valora mai puțin.`,
+    culoare: '#7A3090',
   },
   T4: {
     nr: 'TIPARUL 4',
-    titlu: 'Femeia care dă prea mult',
-    subtitlu: 'Se dovedește prin over-delivery și rămâne cu prea puțin.',
-    descriere: `Aceasta ești femeia care adaugă mereu ceva în plus. O sesiune în plus, un material neplătit, o reducere necerută, timp personal dăruit fără să fie compensat. La suprafață pare generozitate, însă la rădăcină este o nevoie profundă de validare: <em>dacă dau mai mult decât s-a cerut, nu pot fi respinsă.</em>
+    titlu: 'Cel/Cea care dă prea mult',
+    subtitlu: 'Se recunoaște prin over-delivery și rămâne cu prea puțin.',
+    descriere: `Adaugi mereu ceva în plus: o sesiune extra, un material neplătit, o reducere necerută, timp personal dăruit fără compensație. La suprafață pare generozitate — la rădăcină este o nevoie profundă de validare: <em>dacă dau mai mult decât s-a cerut, nu pot fi respins/ă.</em>
 
-Valoarea ta nu este intrinsecă — ea trebuie dovedită continuu prin performanță și dărnicie. Paradoxul: cu cât dai mai mult, cu atât se consolidează convingerea că valoarea ta este condiționată de ce faci, nu de cine ești.`,
+Valoarea ta nu este intrinsecă — trebuie dovedită continuu prin performanță și dărnicie. Paradoxul: cu cât dai mai mult, cu atât se consolidează convingerea că valoarea ta depinde de ce faci, nu de cine ești.`,
+    culoare: '#0F6E56',
   },
   T5: {
     nr: 'TIPARUL 5',
-    titlu: 'Femeia care sabotează înainte de linie',
+    titlu: 'Cel/Cea care se sabotează înainte de linia de sosire',
     subtitlu: 'Ajunge aproape de succes, apoi se oprește.',
     descriere: `Aceasta nu este frica de eșec. Este frica de succes. Începi proiecte cu energie și entuziasm, ajungi aproape de finalizare, aproape de lansare, aproape de marele pas — și atunci ceva se întâmplă. Te îmbolnăvești, creezi un conflict, apare o urgență, găsești o problemă tehnică.
 
-Nu este întâmplător. Subconștientul sabotează exact în momentul cheie pentru că succesul înseamnă ceva periculos: schimbare, pierdere, ruptura de un grup de apartenență sau de o identitate familiară. Subconștientul preferă durerea cunoscută față de necunoscuta succesului.`,
+Nu este întâmplător. Subconștientul sabotează exact în momentul cheie pentru că succesul înseamnă ceva periculos: schimbare, pierdere, ruptura de un grup de apartenența sau de o identitate familiară. Subconștientul preferă durerea cunoscută față de necunoscuta succesului.`,
+    culoare: '#1A5FA0',
   },
 };
 
 // ─── State ─── //
 let currentQ = 0;
-let answers  = new Array(15).fill(null); // tipar ales per întrebare
+let answers  = new Array(15).fill(null);
 let resultTipar = null;
 
 // ─── Init EmailJS ─── //
@@ -265,7 +280,7 @@ function renderQuestion() {
   // Răspunsuri
   const list = document.getElementById('answers-list');
   list.innerHTML = '';
-  q.answers.forEach((ans, idx) => {
+  q.answers.forEach((ans) => {
     const div = document.createElement('div');
     div.className = 'answer-option' + (answers[currentQ] === ans.tipar ? ' selected' : '');
     div.setAttribute('data-tipar', ans.tipar);
@@ -290,7 +305,8 @@ function getProgressMessage(pct) {
   if (pct <= 40) return 'Merge bine, continuă! ✨';
   if (pct <= 60) return 'Ești la jumătate, bravo! 💪';
   if (pct <= 80) return 'Aproape gata! 🌸';
-  return 'Ultima întrebare! 🎯';
+  if (pct < 100) return 'Ultima întrebare! 🎯';
+  return 'Gata! Calculăm tiparul tău... ✦';
 }
 
 function selectAnswer(tipar) {
@@ -320,8 +336,8 @@ function prevQuestion() {
 
 // ─── Calculează rezultat ─── //
 function showResult() {
-  const scores = { T1: 0, T2: 0, T3: 0, T4: 0, T5: 0 };
-  answers.forEach(t => { if (t) scores[t]++; });
+  const scores = { T0: 0, T1: 0, T2: 0, T3: 0, T4: 0, T5: 0 };
+  answers.forEach(t => { if (t && scores[t] !== undefined) scores[t]++; });
 
   let maxScore = 0;
   let winner   = 'T1';
@@ -331,10 +347,20 @@ function showResult() {
   resultTipar = winner;
 
   const t = tipare[winner];
-  document.getElementById('result-tipar-label').textContent    = t.nr;
-  document.getElementById('result-title').textContent          = t.titlu;
-  document.getElementById('result-subtitle').textContent       = t.subtitlu;
-  document.getElementById('result-description').innerHTML      = t.descriere.replace(/\n/g, '<br><br>');
+
+  // Actualizează culoarea accent pentru tipar
+  document.getElementById('result-tipar-label').textContent = t.nr;
+  document.getElementById('result-title').textContent       = t.titlu;
+  document.getElementById('result-title').style.color       = t.culoare;
+  document.getElementById('result-subtitle').textContent    = t.subtitlu;
+  document.getElementById('result-description').innerHTML   = t.descriere.replace(/\n/g, '<br><br>');
+  document.getElementById('result-description').style.borderLeftColor = t.culoare;
+
+  const ctaBox = document.getElementById('result-cta-box');
+  ctaBox.innerHTML = `
+    <p class="result-cta-text">Vrei analiza completă + acces la ghidul specific tiparului tău?</p>
+    <button class="btn-primary" onclick="showEmailScreen()">Vreau analiza completă →</button>
+  `;
 
   showScreen('screen-result');
 }
@@ -353,25 +379,24 @@ function submitEmail(e) {
 
   if (!name || !email) return;
 
-  btn.disabled     = true;
-  btn.textContent  = 'Se trimite...';
+  btn.disabled    = true;
+  btn.textContent = 'Se trimite...';
 
   const tiparData = tipare[resultTipar];
 
   emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-    to_name:      name,
-    to_email:     email,
-    tipar_nr:     tiparData.nr,
-    tipar_titlu:  tiparData.titlu,
-    tipar_subtitlu: tiparData.subtitlu,
-    link_platforma: PLATFORM_LINKS[resultTipar],
+    to_name:         name,
+    to_email:        email,
+    tipar_dominant:  resultTipar,
+    tipar_titlu:     tiparData.titlu,
+    tipar_subtitlu:  tiparData.subtitlu,
+    link_platforma:  PLATFORM_LINKS[resultTipar],
   }).then(() => {
     showScreen('screen-confirm');
   }).catch(err => {
     btn.disabled    = false;
     btn.textContent = 'Vreau să îmi văd tiparul complet →';
-    const errMsg = JSON.stringify(err);
-    alert('EROARE: ' + errMsg);
+    alert('EROARE: ' + JSON.stringify(err));
   });
 }
 
